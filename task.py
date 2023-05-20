@@ -88,17 +88,4 @@ def calculate_cart():
 
     return cart
 
-# Main program
-cart = calculate_cart()
 
-# Output cart details
-print("\nProduct Details:")
-for product in cart["products"]:
-    p = cart["products"][product]
-    print("{} - Quantity: {}, Total Amount: ${}".format(product, p["quantity"], p["total_amount"]))
-
-print("\nSubtotal: ${}".format(cart["subtotal"]))
-print("Discount: {} - ${}".format(cart["discount_name"], cart["discount_amount"]))
-print("Shipping Fee: ${}".format(cart["shipping_fee"]))
-print("Gift Wrap Fee: ${}".format(cart["gift_wrap_fee"]))
-print("Total: ${}".format(cart["total"]))
