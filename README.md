@@ -1,32 +1,32 @@
 # Zennode-Task
-Project Overview:
-The project aims to create a program that simulates a shopping cart. It allows users to input quantities and gift wrap information for products from a catalog, applies discount rules based on the cart contents, calculates fees for shipping and gift wrapping, and provides a final total for the purchase.
+Program Overview:
+This program simulates a shopping cart system. It allows users to input the quantity of each product they want to purchase and specify whether they want gift wrapping for each product. The program calculates the subtotal, applies applicable discounts based on predefined rules, calculates shipping and gift wrap fees, and provides a final total for the purchase.
 
 Technologies and Approach:
-To implement this project, we are using the Python programming language. Python is known for its simplicity and readability, making it an excellent choice for this task. We are coding the project using procedural programming, where the program flow follows a sequence of steps to achieve the desired functionality.
+The program is written in Python, a popular and versatile programming language. Python's simplicity and readability make it suitable for implementing this project. The approach used in this program is procedural programming, where the code follows a sequence of steps to achieve the desired functionality.
 
 Code Explanation:
-Let's break down the code and explain each part:
 
 Catalog and Discount Rules:
+The catalog dictionary represents the available products and their corresponding prices. It acts as a reference for product names and prices.
+The discount_rules dictionary contains predefined discount rules along with their thresholds and discount amounts. These rules define when and how discounts are applied to the cart.
 
-The catalog dictionary stores the available products and their prices.
-The discount_rules dictionary holds the discount rules and their corresponding thresholds and discount values.
 Cart Calculation and Discounts:
 
-The calculate_discount function determines the most beneficial discount rule applicable to the cart based on the discount rules and cart details.
-It iterates through each discount rule and checks if the cart satisfies the rule's conditions. If it does, the rule is added to the applicable_discounts list.
-The function returns the most beneficial discount by sorting the applicable discounts in descending order of discount amount and selecting the first rule.
-If no discounts are applicable, the function returns None.
+The calculate_discount function takes the cart details as input and determines the most beneficial discount rule based on the cart's subtotal, total quantity, and individual product quantities.
+The function iterates through each discount rule and checks if the cart meets the conditions defined by the rule. If it does, the rule is added to the applicable_discounts list.
+The applicable discounts are sorted in descending order of discount amount, and the most beneficial rule is returned. If no discounts apply, None is returned.
 Cart Calculation and Details:
 
-The calculate_cart function initializes a cart dictionary to store the cart details.
-It prompts the user to input the quantity and gift wrap information for each product in the catalog, and it updates the cart dictionary accordingly.
-The function calls calculate_discount to determine the applicable discount and updates the cart with the discount name and amount.
-It calculates the shipping fee based on the total quantity of products, and it calculates the gift wrap fee for products that are selected for gift wrapping.
-The subtotal, total, and other cart details are calculated and added to the cart dictionary.
-Finally, the calculate_cart function returns the populated cart dictionary.
-Program Execution and Output:
+The calculate_cart function initializes a cart dictionary to store the cart details, such as the products, subtotal, total quantity, discount information, shipping fee, gift wrap fee, and total amount.
+The function prompts the user to input the quantity and gift wrap preference for each product in the catalog.
+The cart details are updated accordingly, including the subtotal and total quantity.
+The calculate_discount function is called to determine the applicable discount rule for the cart. If a discount applies, the discount name and amount are added to the cart.
+The shipping fee is calculated based on the total quantity of products, and the gift wrap fee is calculated based on the gift wrap preference for each product.
+The final total is calculated by subtracting the discount amount from the subtotal and adding the shipping fee and gift wrap fee.
+Finally, the populated cart dictionary is returned by the calculate_cart function.
 
-The main program starts by calling calculate_cart to obtain the cart details.
-It then outputs the product details, subtotal, discount applied, shipping fee, gift wrap fee, and the final total to the console.
+Program Execution and Output:
+The program starts by calling the calculate_cart function to obtain the cart details.
+The program then displays the product details (name, quantity, total amount) for each product in the cart.
+The subtotal, discount applied, shipping fee, gift wrap fee, and final total are displayed to the user.
